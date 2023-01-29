@@ -1,4 +1,4 @@
-# Git instruction
+# Инструкция дла работы с Markdown
 
 ## Команды git
 
