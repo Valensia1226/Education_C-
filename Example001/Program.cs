@@ -1,0 +1,1 @@
+﻿Console.WriteLine("2 Hello, World!"); //console позволяет работать с терминалом, writeline позволяет вывести что-то в окно терминала
