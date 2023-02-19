@@ -7,12 +7,12 @@ int TakeInt(string _str = "Введите число: ")
     return str;
 }
 
-/*Console.Write($"Введите число: ");
+Console.Write($"Введите число: ");
 int.TryParse(Console.ReadLine()!, out a);
 Console.Write($"Введите число: ");
 int.TryParse(Console.ReadLine()!, out b);*/
 
-/*int d = 2;
+int d = 2;
 int f = 7;
 Summ(d, f);
 Summ(11, 9);
