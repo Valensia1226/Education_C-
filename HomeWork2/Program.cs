@@ -1,4 +1,5 @@
-﻿void WriteArray(int[] col)
+﻿//Семинар 2
+void WriteArray(int[] col)
 {
     int length = col.Length;
     int index = 0;
