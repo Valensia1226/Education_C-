@@ -50,3 +50,14 @@ switch(n) //switch работает быстрее, чем if, в case нель�
         Console.Write($"Неверно введен номер плоскости");
         break;
 }
+
+switch("Hello") //также можно работать со строками
+{
+    case "Hi":
+        Console.Write("Hello");
+        break;
+    case "Hello":
+        Console.Write("Hi");
+        break;
+}
+

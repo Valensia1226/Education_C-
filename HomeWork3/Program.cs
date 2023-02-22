@@ -2,7 +2,7 @@
 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 14212 -> нет; 12821 -> да; 23432 -> да*/
 
-Console.WriteLine("Задача 19");
+/*Console.WriteLine("Задача 19");
 int Digits(int _a) //количество символов в числе
 {
     int count = 0;
@@ -40,7 +40,7 @@ if (mass[0] == mass[4])
         if (mass[2]==mass[2]) Console.WriteLine("Является палиндромом");
 }
 else Console.WriteLine("Не является палиндромом");
-Console.WriteLine();
+Console.WriteLine();*/
 
 /*Задача 21
 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
@@ -50,32 +50,37 @@ void TakeCoords(string A)
 {
     Console.WriteLine($"Введите координаты точки {A}");
 }
-int TakeCor(string N)
+double TakeCor(string N)
     {
-        int _X;
+        double _X;
         Console.Write($"Введите {N}: ");
-        int.TryParse(Console.ReadLine()!, out _X);
+        double.TryParse(Console.ReadLine()!, out _X);
         return _X;
     }
 
 TakeCoords("A");
-int xA = TakeCor("X");
-int yA = TakeCor("Y");
-int zA = TakeCor("Z");
+double[] massA = new double[3];
+massA[0] = TakeCor("X");
+massA[1] = TakeCor("Y");
+massA[2] = TakeCor("Z");
 
 TakeCoords("B");
-int xB = TakeCor("X");
-int yB = TakeCor("Y");
-int zB = TakeCor("Z");
+double[] massB = new double[3];
+massB[0] = TakeCor("X");
+massB[1] = TakeCor("Y");
+massB[2] = TakeCor("Z");
 
-double Distance = Math.Sqrt((xB-xA)*(xB-xA)+(yB-yA)*(yB-yA)+(zB-zA)*(zB-zA));
-Console.WriteLine(Math.Round(Distance, 2));
+double Distance = Math.Sqrt(Math.Pow(massB[0]-massA[0], 2) + Math.Pow(massB[1]-massA[1], 2) + Math.Pow(massB[2]-massA[2], 2)); //квадрат числа
+Console.Write("Расстояние между точками A и B в 3D пространстве: ");
+Console.WriteLine(Math.Round(Distance, 2)); //округляет до двух знаков после запятой
 Console.WriteLine();
+
+//Math.Pow(Distance, (double)1 / 3); //извлечение корня 3ей степени, если не уточнить тип перед 1/3, то 1/3 будет делиться как int, соответственно степень будет неверной
 
 /*Задача 23
 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27; 5 -> 1, 8, 27, 64, 125*/
-Console.WriteLine("Задача 23");
+/*Console.WriteLine("Задача 23");
 
 int num;
 Console.Write($"Введите число: ");
@@ -87,4 +92,4 @@ while (!int.TryParse(Console.ReadLine(), out num))
 for (int i = 1; i <= num; i++)
 {
     Console.Write($"{i*i*i} ");    
-}
+}*/
