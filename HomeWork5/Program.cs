@@ -3,7 +3,7 @@
 
 int size = WriteCol();
 
-int[] array = FillArray(size, 99, 999);
+int[] array = FillArray(size, 100, 999);
 Print(array);
 int Col = 0;
 
