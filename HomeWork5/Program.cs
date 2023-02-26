@@ -40,7 +40,7 @@ Print(arr);
 
 SelectionSort(arr);
 Print(arr);
-double rez = arr[0] - arr[arr.Length - 1];
+double rez = arr[arr.Length - 1] - arr[0];
 
 Console.WriteLine($"Разница между максимальным и минимальным элементами массива = {Math.Round(rez, round)}");
 Console.WriteLine();
@@ -88,7 +88,7 @@ void SelectionSort(double[] array)
 
         for (int j = i + 1; j < array.Length; j++)
         {
-            if(array[j] > array[minPosition]) minPosition = j;
+            if(array[j] < array[minPosition]) minPosition = j;
         }
         double temporary = array[i];
         array[i] = array[minPosition];
