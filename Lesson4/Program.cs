@@ -19,25 +19,25 @@ FillArray(matrix);
 Console.WriteLine();
 PrintArray(matrix);*/
 
-void PrintArray(int[,]matr)
+void PrintArray(int[,] matr)
 {
-    for (int i=0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j =0; j < matr.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
             Console.Write($"{matr[i, j]} ");
         }
-    Console.WriteLine();
+        Console.WriteLine();
     }
 }
 
-void FillArray(int[,]matr)
+void FillArray(int[,] matr)
 {
-    for (int i=0; i < matr.GetLength(0); i++) //GetLength(0) возвращает количество строк в массиве
+    for (int i = 0; i < matr.GetLength(0); i++) //GetLength(0) возвращает количество строк в массиве
     {
-        for (int j =0; j < matr.GetLength(1); j++) //GetLength(1) возвращает количество столбцов в массиве
+        for (int j = 0; j < matr.GetLength(1); j++) //GetLength(1) возвращает количество столбцов в массиве
         {
-            matr[i,j] = new Random().Next(1,10); //[1,10)
+            matr[i, j] = new Random().Next(1, 10); //[1,10)
         }
     }
 }
@@ -46,8 +46,8 @@ void FillArray(int[,]matr)
 //факториал
 double Factorial(int n) //для типа int на 17! будет переполнение типа, выдаст отрицательное значение
 {
-    if(n == 1 || n == 0) return 1;
-    else return n * Factorial(n -1);
+    if (n == 1 || n == 0) return 1;
+    else return n * Factorial(n - 1);
 }
 
 //Console.WriteLine(Factorial(5));
@@ -58,7 +58,7 @@ double Factorial(int n) //для типа int на 17! будет перепол
 double Fibonacci(int n)
 {
     if (n == 1 || n == 2) return 1;
-    else return Fibonacci(n-1) + Fibonacci(n-2);
+    else return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
 
 for (int i = 1; i < 50; i++)
