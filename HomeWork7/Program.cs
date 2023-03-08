@@ -6,7 +6,7 @@ int[] arraySize = TakeNumbersFromConsole("Задайте количество с
 int min = TakeNumber("Задайте диапазон случайных вещественных чисел:\nmin = ");
 int max = TakeNumber("max = ");
 
-//Создаем массив вещественных чисел по заданным выше параметрам
+//Создаем и показываем массив вещественных чисел по заданным выше параметрам
 double[,] array = FillArrayDouble(arraySize[0], arraySize[1], min, max, 0);
 Console.WriteLine();
 PrintArray(array);
