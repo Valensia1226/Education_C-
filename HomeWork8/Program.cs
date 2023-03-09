@@ -1,4 +1,4 @@
-﻿//Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+﻿/* //Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
 Console.WriteLine($"Задача 54. Задан двумерный массив:\n");
 int[,] array = FillArrayInteger(4, 4, 0, 10);
@@ -88,17 +88,6 @@ void SearchLineWithMinSum(int[,] array)
     Console.WriteLine($"Индекс строки с наименьшей суммой элементов = {indexLineWithMinSum}");
 }
 
-/* **Задача 57:** Составить частотный словарь элементов двумерного массива. Частотный словарь содержит информацию о том, 
-сколько раз встречается элемент входных данных.
-1, 2, 3
-4, 6, 1
-2, 1, 6
-1 встречается 3 раза
-2 встречается 2 раз
-3 встречается 1 раз
-4 встречается 1 раз
-6 встречается 2 раза */
-
 //Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
 Console.WriteLine();
@@ -127,17 +116,69 @@ if (matrix1.GetLength(1) == matrix2.GetLength(0))
     Console.WriteLine("Результат перемножения матриц:\n");
     PrintArray(rezult);
 }
-else Console.WriteLine("Умножение матриц невозможно. Требуется, чтобы число столбцов первой матрицы равнялось числу строк второй матрицы!");
+else Console.WriteLine("Умножение матриц невозможно. Требуется, чтобы число столбцов первой матрицы равнялось числу строк второй матрицы!"); */
 
+//Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
-//Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+int[,,] threeDimentionArray = new int[2, 2, 2];
 
-
+for (int i = 0; i < threeDimentionArray.GetLength(0); i++)
+{
+    for (int j = 0; j < threeDimentionArray.GetLength(1); j++)
+    {
+        for (int k = 0; k < threeDimentionArray.GetLength(2); k++)
+        {
+            threeDimentionArray[i, j, k] = new Random().Next(10, 101);
+            Console.Write($"{threeDimentionArray[i, j, k]} ({i}, {j}, {k}) ");
+        }
+        Console.WriteLine();
+    }
+} 
 
 //Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
+int[,] spiral = new int[4, 4];
+for (int i = 0; i < spiral.GetLength(0); i++)
+{
+    for (int j = 0; j < spiral.GetLength(1); j++)
+    {
+        if (i == 0) spiral[i, j] = j + 1;
+        if (j == 3 && (i == 1 || i == 2)) spiral[i, j] = 4  + i;
+        
+        if (i == 3) spiral[i, j] = 10 - j;
+        if (i == 1 && j != 3) spiral[i, j] = 12 + j;
+        if (i == 2)
+        {
+            if (j == 0) spiral[i, j] = 11;
+            else if (j == 1) spiral[i, j] = 16;
+            else if (j == 2) spiral[i, j] = 15;
+        }
+    }
+}
+for (int i = 0; i < spiral.GetLength(0); i++)
+{
+    for (int j = 0; j < spiral.GetLength(1); j++)
+    {
+        if (spiral[i, j] / 10 == 0) Console.Write($"0{spiral.GetValue(i, j)} ");
+        else Console.Write($"{spiral.GetValue(i, j)} ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
 
-//Функции
+
+/* **Задача 57:** Составить частотный словарь элементов двумерного массива. Частотный словарь содержит информацию о том, 
+сколько раз встречается элемент входных данных.
+1, 2, 3
+4, 6, 1
+2, 1, 6
+1 встречается 3 раза
+2 встречается 2 раз
+3 встречается 1 раз
+4 встречается 1 раз
+6 встречается 2 раза */
+
+//Общие Функции
 //Вывести массив любого типа на консоль
 void PrintArray(Array matr)
 {
@@ -176,23 +217,6 @@ void PrintArray(Array matr)
             break;
     }
 
-}
-
-//Взять целое число с консоли
-int TakeNumber(string text)
-{
-    Console.Write(text);
-    int number;
-    int.TryParse(Console.ReadLine()!, out number);
-    return number;
-}
-
-//Взять несколько чисел с консоли, записать в одномерный массив
-int[] TakeNumbersFromConsole(string text)
-{
-    Console.Write(text);
-    int[] array = Console.ReadLine()!.Split(' ', ',', '.').Where(i => int.TryParse(i, out _)).Select(int.Parse).ToArray();
-    return array;
 }
 
 //Создать массив целых чисел и заполнить его случайными значениями
